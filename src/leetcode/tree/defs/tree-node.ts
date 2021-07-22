@@ -1,3 +1,8 @@
+/**
+ * 二叉树节点定义
+ * @export
+ * @class TreeNode
+ */
 export default class TreeNode {
   val: number;
   left: TreeNode | null;

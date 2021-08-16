@@ -3,10 +3,9 @@
  * https://leetcode-cn.com/problems/climbing-stairs/
  */
 function ClimbingStairs() {
-
 }
 
-// ClimbingStairs();
+ClimbingStairs();
 
 
 /**
@@ -17,4 +16,7 @@ function ClimbingStairs() {
  */
 function climbStairs(n: number): number {
   return n;
+}
+
+function climb() {
 }

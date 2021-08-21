@@ -9,7 +9,7 @@ export default function LongestPalindromicSubstring() {
   console.log(longestPalindrome('ac') === 'a');
 }
 
-LongestPalindromicSubstring();
+// LongestPalindromicSubstring();
 
 /**
  * 动态规划, 已知 aba为回文串, 那么cabac也为回文串

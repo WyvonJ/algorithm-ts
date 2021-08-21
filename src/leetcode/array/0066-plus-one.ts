@@ -20,6 +20,8 @@ function plusOne(digits: number[]): number[] {
     if (digits[i] == 9) {
       digits[i] = 0;
     } else {
+      // 只要碰到一个不是9的就可以将当前位置1
+      // 因为不管有几个9, 都只会让下一位加一
       digits[i] += 1;
       return digits;
     }

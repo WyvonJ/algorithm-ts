@@ -19,7 +19,7 @@ function BinaryTreePreorderTraversal() {
  * @param {(TreeNode | null)} root
  * @return {number[]}
  */
-function preorderTraversal(root: TreeNode | null): number[] {
+function preorderTraversal1(root: TreeNode | null): number[] {
   const result: Array<number> = [];
   preorder(root, result);
   return result;
@@ -42,10 +42,10 @@ function preorder(root: TreeNode | null, result: Array<number>) {
 function preorderTraversal2(root: TreeNode | null): number[] {
   // 存放结果
   const result: Array<number> = [];
-  // 手动构造栈
-  const stack: Array<TreeNode> = [];
+  // 手动构造栈 根节点一定不为null
+  const stack: Array<TreeNode> = [root as TreeNode];
   // 根节点一定不为null
-  stack.push(root as TreeNode);
+  // stack.push(root as TreeNode);
   while (stack.length > 0 || root !== null) {
     root = stack.pop() || null;
     while (root !== null) {

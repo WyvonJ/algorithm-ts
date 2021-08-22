@@ -41,5 +41,6 @@ export class Comparable {
 export default {
   generate,
   compare,
-  swap
+  swap,
+  time,
 };

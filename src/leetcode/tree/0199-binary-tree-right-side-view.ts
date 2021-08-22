@@ -1,12 +1,10 @@
-import TreeNode from '../tree/defs/tree-node';
+import TreeNode from './defs/tree-node';
 
 /**
  * 199. 二叉树的右视图
  * https://leetcode-cn.com/problems/binary-tree-right-side-view/
  */
- export default function BinaryTreeRightSideView() {
-
-}
+export default function BinaryTreeRightSideView() {}
 
 BinaryTreeRightSideView();
 
@@ -25,6 +23,6 @@ right)
  *     }
  * }
  */
-function rightSideView(root: TreeNode | null): number[] {
-  return []
-};
+function rightSideView(root: TreeNode | null): number[] {
+  return [];
+}

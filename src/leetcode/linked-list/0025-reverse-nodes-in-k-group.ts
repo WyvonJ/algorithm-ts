@@ -4,9 +4,7 @@ import ListNode from './defs/list-node';
  * 25. K 个一组翻转链表
  * https://leetcode-cn.com/problems/reverse-nodes-in-k-group/
  */
- export default function ReverseNodesInKGroup() {
-
-}
+export default function ReverseNodesInKGroup() {}
 
 ReverseNodesInKGroup();
 
@@ -22,7 +20,6 @@ null) {
  *     }
  * }
  */
-function reverseKGroup(head: ListNode | null, k: 
-number): ListNode | null {
-  return null
-};
+function reverseKGroup(head: ListNode | null, k: number): ListNode | null {
+  return null;
+}

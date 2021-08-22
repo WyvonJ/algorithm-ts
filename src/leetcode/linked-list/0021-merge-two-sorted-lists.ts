@@ -9,23 +9,10 @@ export default function MergeTwoSortedLists() {}
 MergeTwoSortedLists();
 
 /**
- * Definition for singly-linked list.
- * class ListNode {
- *     val: number
- *     next: ListNode | null
- *     constructor(val?: number, next?: ListNode | 
-null) {
- *         this.val = (val===undefined ? 0 : val)
- *         this.next = (next===undefined ? null : next)
- *     }
- * }
- */
-
-/**
  * 递归法
  * @param {(ListNode | null)} l1
  * @param {(ListNode | null)} l2
- * @return {*}  {(ListNode | null)}
+ * @return {(ListNode | null)}
  */
 function mergeTwoLists(l1: ListNode | null, l2: ListNode | null): ListNode | null {
   if (l1 === null) return l2;
@@ -43,7 +30,7 @@ function mergeTwoLists(l1: ListNode | null, l2: ListNode | null): ListNode | nul
  * 迭代法
  * @param {(ListNode | null)} l1
  * @param {(ListNode | null)} l2
- * @return {*}  {(ListNode | null)}
+ * @return {(ListNode | null)}
  */
 function mergeTwoLists1(l1: ListNode | null, l2: ListNode | null): ListNode | null {
   const dummy = new ListNode(-1);

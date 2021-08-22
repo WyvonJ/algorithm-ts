@@ -1,12 +1,15 @@
 import ListNode from './defs/list-node';
 
-
 /**
- * 
- * @param {(ListNode | null)} head
- * @param {number} n
- * @return {(ListNode | null)}
+ * 19. 删除链表的倒数第 N 个结点
+ * https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/
  */
+export default function RemoveNthNodeFromEndOfList() {
+
+}
+
+RemoveNthNodeFromEndOfList();
+
 function removeNthFromEnd(head: ListNode | null, n: number): ListNode | null {
-  return head;
-};
+ return null;
+}

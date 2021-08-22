@@ -1,8 +1,9 @@
-import './array'
-import './linked-list'
-import './matrix'
-import './tree'
-import './dp'
-import './stack'
-import './string'
-import './queue'
+import './array';
+import './linked-list';
+import './matrix';
+import './tree';
+import './dp';
+import './stack';
+import './string';
+import './queue';
+import './search';

@@ -24,7 +24,7 @@ export default function Merge() {
 function sort(nums: number[]) {
   // 只定义一个temp 空间复杂度 O(N)
   const temp: number[] = new Array(nums.length);
-  _sort(nums, 0, nums.length - 1, temp);
+  _sort(nums, 0, nums.length - 1, temp); // 排序入口
 }
 
 /**
@@ -36,7 +36,7 @@ function sort(nums: number[]) {
  */
 function _sort(nums: number[], left: number, right: number, temp: number[]) {
   if (left < right) {
-    // 定义拆分点
+    // 定义拆分点 注意取整
     const mid = ~~((left + right) / 2);
     // 左右两边分别递归排序
     _sort(nums, left, mid, temp);
@@ -55,40 +55,24 @@ function _sort(nums: number[], left: number, right: number, temp: number[]) {
  * @param {number[]} temp
  */
 function merge(nums: number[], left: number, mid: number, right: number, temp: number[]) {
-  let l = left; // 0
-  let r = mid + 1; // 
-
-  // 这个ptr是用来将两个数组中的元素放到temp中去的
-  // 注意left和right都是索引 所以是ptr <= right
-  for (let ptr = left; ptr <= right; ptr++) {
-    // 这里是四个完全竞态的条件, 所以不能直接用 || 合写
-    // 否则会出现 r > right和nums[l] > nums[r] 同时成立 导致一次循环执行力两次赋值
-    // 注意! 这里是错误写法❌
-    // if (nums[l] <= nums[r] || r > right) {
-    //   temp[ptr] = nums[l];
-    //   l++;
-    // } else if (nums[l] > nums[r] || l > mid) {
-    //   temp[ptr] = nums[r];
-    //   r++;
-    // }
-    // 根据情况将较小的值放到temp中去
+  let l = left; // 左指针从 0 到 mid
+  let r = mid + 1; // 右指针从 mid+1 到 right
+  // 这个i是用来将两个数组中的元素放到temp中去的
+  // 注意left和right都是索引 i <= right
+  for (let i = left; i <= right; i++) {
     if (r > right) {
-      temp[ptr] = nums[l];
-      l++;
+      temp[i] = nums[++l];
     } else if (l > mid) {
-      temp[ptr] = nums[r];
-      r++;
+      temp[i] = nums[++r];
     } else if (nums[l] <= nums[r]) {
-      temp[ptr] = nums[l];
-      l++;
+      temp[i] = nums[++l];
     } else if (nums[l] > nums[r]) {
-      temp[ptr] = nums[r];
-      r++;
+      temp[i] = nums[++r];
     }
   }
   // 将元素放回原数组
-  for (let ptr = left; ptr <= right; ptr++) {
-    nums[ptr] = temp[ptr];
+  for (let i = left; i <= right; i++) {
+    nums[i] = temp[i];
   }
 }
 

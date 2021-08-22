@@ -8,7 +8,7 @@ export default function AddStrings() {
   console.log(addStrings('123', '32'))
 }
 
-AddStrings();
+// AddStrings();
 
 /**
  * 双指针

@@ -1,24 +1,30 @@
-import { compare, generate, swap } from './utils';
+import { compare, generate, swap, time } from './utils';
 
 export default function Intertion() {
-  const nums = generate(20000);
-  const original = nums.slice(0);
+  const nums = generate(50000);
+  // const original = nums.slice(0);
+  const custom = nums.slice(0);
+  const custom1 = nums.slice(0);
+  const native = nums.slice(0);
 
-  console.time('原生排序');
-  original.sort((a, b) => a - b);
-  console.timeEnd('原生排序');
+  time('原生排序', () => {
+    native.sort((a, b) => a - b);
+  });
+  time('插入排序', () => {
+    sort(custom);
+  });
+  time('插入排序: 优化版本1', () => {
+    sort1(custom1);
+  });
 
-  console.time('插入排序');
-  sort(nums);
-  console.timeEnd('插入排序');
-
-  compare(nums, original);
+  compare(custom, native);
+  compare(custom1, native);
 }
 
 // Intertion();
 
 /**
- * 
+ * 基础版本, 两两比较, 交换位置
  * @param {number[]} nums
  */
 function sort(nums: number[]) {
@@ -38,5 +44,20 @@ function sort(nums: number[]) {
  * @param {number[]} nums
  */
 function sort1(nums: number[]) {
-  // TODO
+  for (let i = 1; i < nums.length; i++) {
+    // 先保存最开始比较的值
+    const curr = nums[i];
+    let j = i;
+    // 从i开始, 向左移动 同时比较是否大于
+    while (j > 0 && nums[j - 1] > curr) {
+      // 大于当前的数就将后面的值赋值为前面一个
+      // 即移动一位
+      nums[j] = nums[j - 1];
+      j--;
+    }
+    // 最后将剩下来的空位用保存的curr填充
+    nums[j] = curr;
+  }
 }
+
+// TODO 优化版本2 往前移动时使用二分查找位置

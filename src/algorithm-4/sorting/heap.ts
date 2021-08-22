@@ -2,7 +2,7 @@ import { compare, generate, swap, time } from './utils';
 
 export default function Heap() {
   // const nums = generate(10);
-  const nums = [1, 4, 2, 5, 3];
+  const nums = [1, 2, 3, 4, 5, 6, 7];
   const original = nums.slice(0);
   const custom = nums.slice(0);
   const native = nums.slice(0);
@@ -17,7 +17,7 @@ export default function Heap() {
   compare(custom, native);
 }
 
-Heap();
+// Heap();
 
 /**
  * 堆排序
@@ -25,7 +25,6 @@ Heap();
  */
 function sort(nums: number[]) {
   buildMaxHeap(nums);
-  console.log(nums);
   let len = nums.length;
   for (let i = nums.length - 1; i > 0; i--) {
     swap(nums, 0, i);

@@ -1,7 +1,7 @@
 import { compare, generate, swap, time } from './utils';
 
 export default function Intertion() {
-  const nums = generate(50000);
+  const nums = generate(10000);
   // const original = nums.slice(0);
   const custom = nums.slice(0);
   const custom1 = nums.slice(0);

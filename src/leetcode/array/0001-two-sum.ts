@@ -29,6 +29,6 @@ function twoSum(nums: number[], target: number): number[] {
       map[target - n] = i;
     }
   }
-  return [];
+  return [-1, -1];
 }
 

@@ -11,7 +11,7 @@ export default function BinaryTreePostorderTraversal() {
   console.log(result);
 }
 
-BinaryTreePostorderTraversal();
+// BinaryTreePostorderTraversal();
 
 /**
  * 递归
@@ -34,23 +34,28 @@ function postorder(root: TreeNode | null, result: number[]) {
 }
 
 /**
- * 借助栈迭代
+ * 迭代法遍历
+ * 与前序遍历思路一样, 只是先将右子树的值加进来
+ * 最后反转整个数组
  * @param {(TreeNode | null)} root
  * @return {number[]}  {number[]}
  */
 function postorderTraversal2(root: TreeNode | null): number[] {
+  if(root === null) return [];
   const result: number[] = [];
-  // 根节点一定不为null
-  const stack: TreeNode[] = [root as TreeNode];
-  while (stack.length !== 0 || root !== null) {
+  const stack: TreeNode[] = [root];
+  while (stack.length > 0) {
     root = stack.pop() || null;
     while (root !== null) {
       result.push(root.val);
+      // 将左节点放入
       if (root.left !== null) {
         stack.push(root.left);
       }
+      // 遍历从右节点开始
       root = root.right;
     }
   }
+  // 反转数组
   return result.reverse();
 }
